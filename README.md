@@ -21,5 +21,23 @@ This project explains how to use Microsoft Custom Vision AI to detect defects in
 
 <img width="1223" alt="Screenshot 2022-05-17 at 11 46 54" src="https://user-images.githubusercontent.com/87117107/168724622-df91b30a-704f-4a6c-ae57-e496ca28d38d.png">
 
-5. Training performed multiple iterations and 
+5. Training performed multiple iterations and iteration 8 chosen for predicting the unseen images. With 54 images trained, it have the ability to detect scratch and dent. Iteration 6 had 52 images trained and with just an increase of 2 images to iteration 8 of 54 images, it was able to improve the accuracy of detecting scratch defect from Recall of 16.7% to 41.2%. Significant improvement of precision, recall and mean average precision was seen.
+
+<img width="1179" alt="Screenshot 2022-05-17 at 12 04 50" src="https://user-images.githubusercontent.com/87117107/168726474-f6bba26e-852b-45a0-9446-b4be89883c44.png">
+
+
+<img width="1212" alt="Screenshot 2022-05-17 at 12 02 55" src="https://user-images.githubusercontent.com/87117107/168726275-d7695455-04c5-4b32-afcf-6872bcbb2a43.png">
+
+6. For this project, 72 images dataset was provided. A set of 30, 52, 54 and 62 images were trained and overall good result was obtained with training of 54 images. The 62 images result gave inaccurate prediction of scratch and dent. This is due to the unbalanced tags of the dent and scratch for training since the scratch have been tagged lesser than scratch. Nevertheless, with small set of images trained, it can still predict the scratch and dent which would be hard to be performed without Custom Vision.
+7. There is defect of irregular colours but due to insufficient example of images having the defect make it unable to be trained as the tag labels must at least be 15 to be trained using Custom Vision. Only defects of scratch and dent was trained and being predicted in this project.
+
+## Custom Vision API and SDK with Python language
+In the Custom Vision portal, training images is uploaded manually and automatic training can be done by using API. Python language is being used for the training API. This training images will automatically send to Custom Vision portal and iteration will start. The code can be obtained from `train-detector.py` from folder 
+
+1. **Microsoft Visual Object Tagging Tool (VoTT)** is used to tag the dent and scratch on the images. It has the ability exporting to json file as this will be used to identify the bounding box of the coordinates of each tag. Since in the portal is done using the cursor and it has the capability of tagging the defect and trained from the labeled bounding box automatically but if done manually, annotation of the images must be done by ourselves to find the exact location of defect and scratch. 
+2. The data of the training images is saved in Azure Blob Storage to be tagged on VoTT. It's very secure and protect the data privacy as SAS token and enable CORS should be done before connecting to the blob storage.
+
+<img width="1271" alt="Screenshot 2022-05-16 at 15 03 20" src="https://user-images.githubusercontent.com/87117107/168729220-dda3a612-c506-489f-9555-b81e3d3ecf67.png">
+
+
 
