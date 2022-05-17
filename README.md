@@ -102,3 +102,7 @@ ClearCollect(gallerycol,CustomVision.DetectImageV2("Your Custom Vision AI projec
 
 <img width="493" alt="Screenshot 2022-05-16 at 14 45 49" src="https://user-images.githubusercontent.com/87117107/168748882-950ec865-1492-4271-95ac-52e0bb2721a2.png">
 
+**Note: The terminal client app and Power Apps built for this project can be both used for the manufacturing company to detect the defects in the images of aircraft parts.**
+
+## Remarks
+The apps can be improved more by finding ways to provide bounding box for the exact location of the defects on the image of aircraft parts for a better evaulation. 
