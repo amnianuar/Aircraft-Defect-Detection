@@ -1,0 +1,187 @@
+{
+    "name": "aircraft-defects",
+    "securityToken": "aircraft-defects Token",
+    "description": "Aircraft Defects Detection",
+    "videoSettings": {
+        "frameExtractionRate": 15
+    },
+    "tags": [
+        {
+            "name": "Dent",
+            "color": "#00FFFF"
+        },
+        {
+            "name": "Scratch",
+            "color": "#4894fe"
+        }
+    ],
+    "id": "Et6X_QPQH",
+    "activeLearningSettings": {
+        "autoDetect": false,
+        "predictTag": true,
+        "modelPathType": "coco"
+    },
+    "version": "2.2.0",
+    "lastVisitedAssetId": "48700a040d8cce079526a028357bcdb9",
+    "assets": {
+        "416beb389a766c79ac214f7683becdae": {
+            "asset": {
+                "id": "416beb389a766c79ac214f7683becdae",
+                "format": "JPG",
+                "state": 2,
+                "type": 1,
+                "name": "IMG_2713.JPG",
+                "path": "https://storageaircraftdefects.blob.core.windows.net/newcontainer/IMG_2713.JPG?sv=2020-08-04&ss=bfqt&srt=sco&sp=rwdlacupitfx&se=2022-05-16T12:27:17Z&st=2022-05-14T16:27:17Z&spr=https&sig=rZl4IJsi2gfO7rsek6ay5ZQTuHcSt5Nb5ERWu%2BshM9c%3D",
+                "size": {
+                    "width": 1600,
+                    "height": 1064
+                }
+            },
+            "regions": [
+                {
+                    "id": "JteWB83U2",
+                    "type": "RECTANGLE",
+                    "tags": [
+                        "Scratch"
+                    ],
+                    "boundingBox": {
+                        "height": 50.48635824436536,
+                        "width": 89.13649025069637,
+                        "left": 977.5301764159702,
+                        "top": 56.3041221826809
+                    },
+                    "points": [
+                        {
+                            "x": 977.5301764159702,
+                            "y": 56.3041221826809
+                        },
+                        {
+                            "x": 1066.6666666666665,
+                            "y": 56.3041221826809
+                        },
+                        {
+                            "x": 1066.6666666666665,
+                            "y": 106.79048042704626
+                        },
+                        {
+                            "x": 977.5301764159702,
+                            "y": 106.79048042704626
+                        }
+                    ]
+                },
+                {
+                    "id": "_SQRJKMRp",
+                    "type": "RECTANGLE",
+                    "tags": [
+                        "Dent"
+                    ],
+                    "boundingBox": {
+                        "height": 30.291814946619215,
+                        "width": 43.08263695450325,
+                        "left": 1463.3240482822655,
+                        "top": 793.4049525504151
+                    },
+                    "points": [
+                        {
+                            "x": 1463.3240482822655,
+                            "y": 793.4049525504151
+                        },
+                        {
+                            "x": 1506.4066852367687,
+                            "y": 793.4049525504151
+                        },
+                        {
+                            "x": 1506.4066852367687,
+                            "y": 823.6967674970343
+                        },
+                        {
+                            "x": 1463.3240482822655,
+                            "y": 823.6967674970343
+                        }
+                    ]
+                }
+            ],
+            "version": "2.2.0"
+        },
+        "48700a040d8cce079526a028357bcdb9": {
+            "asset": {
+                "id": "48700a040d8cce079526a028357bcdb9",
+                "format": "JPG",
+                "state": 2,
+                "type": 1,
+                "name": "IMG_2626.JPG",
+                "path": "https://storageaircraftdefects.blob.core.windows.net/newcontainer/IMG_2626.JPG?sv=2020-08-04&ss=bfqt&srt=sco&sp=rwdlacupitfx&se=2022-05-16T12:27:17Z&st=2022-05-14T16:27:17Z&spr=https&sig=rZl4IJsi2gfO7rsek6ay5ZQTuHcSt5Nb5ERWu%2BshM9c%3D",
+                "size": {
+                    "width": 1600,
+                    "height": 1064
+                }
+            },
+            "regions": [
+                {
+                    "id": "onWRM-6NF",
+                    "type": "RECTANGLE",
+                    "tags": [
+                        "Dent"
+                    ],
+                    "boundingBox": {
+                        "height": 41.65124555160142,
+                        "width": 66.85236768802228,
+                        "left": 363.9740018570102,
+                        "top": 881.7560794780545
+                    },
+                    "points": [
+                        {
+                            "x": 363.9740018570102,
+                            "y": 881.7560794780545
+                        },
+                        {
+                            "x": 430.8263695450325,
+                            "y": 881.7560794780545
+                        },
+                        {
+                            "x": 430.8263695450325,
+                            "y": 923.4073250296559
+                        },
+                        {
+                            "x": 363.9740018570102,
+                            "y": 923.4073250296559
+                        }
+                    ]
+                },
+                {
+                    "id": "ZkB7xt-zZ",
+                    "type": "RECTANGLE",
+                    "tags": [
+                        "Dent"
+                    ],
+                    "boundingBox": {
+                        "height": 50.48635824436536,
+                        "width": 65.36675951717734,
+                        "left": 1332.5905292479108,
+                        "top": 544.7596381969157
+                    },
+                    "points": [
+                        {
+                            "x": 1332.5905292479108,
+                            "y": 544.7596381969157
+                        },
+                        {
+                            "x": 1397.9572887650882,
+                            "y": 544.7596381969157
+                        },
+                        {
+                            "x": 1397.9572887650882,
+                            "y": 595.2459964412811
+                        },
+                        {
+                            "x": 1332.5905292479108,
+                            "y": 595.2459964412811
+                        }
+                    ]
+                }
+            ],
+            "version": "2.2.0"
+        }
+
+    }
+}

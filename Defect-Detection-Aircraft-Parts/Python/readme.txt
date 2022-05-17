@@ -1,0 +1,1 @@
+This folder contains Python code for testing and training of the defect detection using API from Custom Vision Services that has been created for this project.
