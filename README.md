@@ -67,11 +67,21 @@ In the Custom Vision portal, training images is uploaded manually and automatic 
 ![output-defect-2705](https://user-images.githubusercontent.com/87117107/168736589-bd26a0dc-37a9-49d6-8186-3993c22c9c8d.jpg)
 ![output-defect-2627](https://user-images.githubusercontent.com/87117107/168736824-89b40c5d-9e03-4ec4-bfb4-87bd95bf0026.jpg)
 
-10. Since all images dataset provided have defects, image of a clean metal surface from the internet were used to evaluate the prediction. This is due to some of the images of aircraft parts seem to be of metal or steel surfaces. It could be seen the first output have no defect at all and the second output have detect scratches. 
+10. Since all images dataset provided have defects, image of a clean metal surface from the internet were used to test the prediction. This is due to some of the images of aircraft parts seem to be of metal or steel surfaces. It could be seen the first output have no defect at all and the second output have detect scratches. Even at this point, the model could detect scratch. The training of the model could be better by having more training images in different lighting conditions and different angles to produce better defect detection later.
 
 ![output-defect-TestCleanSurface-2](https://user-images.githubusercontent.com/87117107/168737678-6884a614-0412-4f64-aa2f-b1b24a3458d1.jpg)
-
 ![output-defect-TestCleanSurface](https://user-images.githubusercontent.com/87117107/168737718-c5a5810d-a085-45a8-bc32-e89e92fed30d.jpg)
+
+11. The output defects exact coordinates was generated from the terminal client app using the prediction python SDK. 
+<img width="948" alt="Screenshot 2022-05-15 at 16 58 52" src="https://user-images.githubusercontent.com/87117107/168740277-8bf56d92-4761-46fc-a7cd-d8dd2f0482d5.png">
+
+
+## Microsoft Power Apps 
+
+Since the client terminal app does not have frontend UI to navigate with, another way can be done to build apps by using Power Apps.
+
+1. It provide connection to the Custom Vision 
+
 
 
 
