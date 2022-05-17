@@ -97,3 +97,8 @@ ClearCollect(gallerycol,CustomVision.DetectImageV2("Your Custom Vision AI projec
 ```
 <img width="1323" alt="Screenshot 2022-05-17 at 14 30 52" src="https://user-images.githubusercontent.com/87117107/168744109-75f57cfc-b3d7-488f-b327-350044b1b398.png">
 
+4. The apps output will be displayed the probability of the respective tag name which are Dent and Scratch. The output containing the tag name and probabilities can be scrolled till the end to detect defects on the uploaded images. 
+5. The management of the manufacturing company can use the apps to detect any defects on the image uploaded. Hence, batches of finished aircraft parts manufactured images can be uploaded to identify if it has defects. The management can set the threshold of probability of the defects to determine what is their tolerance of defect. It is recommended to set threshold probability to 50% or above as predicted scratch or dent below 50% could be a false positive where it is wrongly classified as defect. 
+
+<img width="493" alt="Screenshot 2022-05-16 at 14 45 49" src="https://user-images.githubusercontent.com/87117107/168748882-950ec865-1492-4271-95ac-52e0bb2721a2.png">
+
