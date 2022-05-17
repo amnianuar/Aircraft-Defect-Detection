@@ -97,9 +97,3 @@ ClearCollect(gallerycol,CustomVision.DetectImageV2("Your Custom Vision AI projec
 ```
 <img width="1323" alt="Screenshot 2022-05-17 at 14 30 52" src="https://user-images.githubusercontent.com/87117107/168744109-75f57cfc-b3d7-488f-b327-350044b1b398.png">
 
-
-
-
-
-
-
