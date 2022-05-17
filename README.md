@@ -28,16 +28,52 @@ This project explains how to use Microsoft Custom Vision AI to detect defects in
 
 <img width="1212" alt="Screenshot 2022-05-17 at 12 02 55" src="https://user-images.githubusercontent.com/87117107/168726275-d7695455-04c5-4b32-afcf-6872bcbb2a43.png">
 
-6. For this project, 72 images dataset was provided. A set of 30, 52, 54 and 62 images were trained and overall good result was obtained with training of 54 images. The 62 images result gave inaccurate prediction of scratch and dent. This is due to the unbalanced tags of the dent and scratch for training since the scratch have been tagged lesser than scratch. Nevertheless, with small set of images trained, it can still predict the scratch and dent which would be hard to be performed without Custom Vision.
+6. For this project, 72 images dataset was provided. 62 images was used for training and 10 are set aside for testing. A set of 30, 52, 54 and 62 images were trained and overall good result was obtained with training of 54 images. The 62 images result gave inaccurate prediction of scratch and dent. This is due to the unbalanced tags of the dent and scratch for training since the scratch have been tagged lesser than scratch. Nevertheless, with small set of images trained, it can still predict the scratch and dent which would be hard to be performed without Custom Vision.
 7. There is defect of irregular colours but due to insufficient example of images having the defect make it unable to be trained as the tag labels must at least be 15 to be trained using Custom Vision. Only defects of scratch and dent was trained and being predicted in this project.
 
 ## Custom Vision API and SDK with Python language
-In the Custom Vision portal, training images is uploaded manually and automatic training can be done by using API. Python language is being used for the training API. This training images will automatically send to Custom Vision portal and iteration will start. The code can be obtained from `train-detector.py` from folder 
+In the Custom Vision portal, training images is uploaded manually and automatic training can be done by using API. Python language is being used for the training API. This training images will automatically send to Custom Vision portal and iteration will start. The code can be obtained from `train-detector.py'.
 
 1. **Microsoft Visual Object Tagging Tool (VoTT)** is used to tag the dent and scratch on the images. It has the ability exporting to json file as this will be used to identify the bounding box of the coordinates of each tag. Since in the portal is done using the cursor and it has the capability of tagging the defect and trained from the labeled bounding box automatically but if done manually, annotation of the images must be done by ourselves to find the exact location of defect and scratch. 
-2. The data of the training images is saved in Azure Blob Storage to be tagged on VoTT. It's very secure and protect the data privacy as SAS token and enable CORS should be done before connecting to the blob storage.
+
+3. The data of the training images is saved in Azure Blob Storage to be tagged on VoTT. It's very secure and protect the data privacy as SAS token and enable CORS should be done before connecting to the blob storage. After finished tagging, export to json file was done named `aircraft-defects-export.json` to Azure Blob storage.
 
 <img width="1271" alt="Screenshot 2022-05-16 at 15 03 20" src="https://user-images.githubusercontent.com/87117107/168729220-dda3a612-c506-489f-9555-b81e3d3ecf67.png">
+
+3. The exported json file of bounding coordinates was not normalized hence was calculated manually and put into `tagged-images.json`. All the images will automatically exchange data using traning API to Custom Vision portal.
+
+4.  When bounding box is not correctly tagged at the correct location of the defect, it can be adjusted in the Custom Vision portal on the Training Images section. Additional defect detected can be tagged as well.
+
+<img width="1323" alt="JSON file normalized not so accurate" src="https://user-images.githubusercontent.com/87117107/168733128-6933a972-8c6c-4957-9d02-cd0131a18f7f.png">
+
+
+<img width="1481" alt="Screenshot 2022-05-15 at 03 50 19" src="https://user-images.githubusercontent.com/87117107/168734544-347dfc62-5f46-4ef6-a2a4-fab6a1adeab8.png">
+
+5. After finished training images using API, the new iteration is evaluated to identify which iterations have the highest accuracy for predicting the defects and correctly tagging them. After this, the iteration of training the model is published for prediction to be done for the unseen images.
+6. The 10 images from dataset for testing that has been set aside will be predicted its image of having defects or not
+7. A client terminal app is used to predict the images by using Python SDK and to plot the tagged exact region of dent and scratches. The code can be obtained from `test-detector.py`. 
+8. The result showed the exact location of dent and scratch which could not be visible by the human eyes. This shows that Custom Vision have made it possible to detect the defects in real time and the model was well trained even with 54 images. The accuracy of the predicion is even up to above 90% for many defects in the image. 
+9. Defects of higher probability than 50% are displayed to avoid false positives.
+
+![output-defect-2699](https://user-images.githubusercontent.com/87117107/168736455-aea81bfa-273d-4196-9b67-898d85a06af1.jpg)
+
+![output-defect-2637](https://user-images.githubusercontent.com/87117107/168736566-62f7e1b4-0b71-4ef9-807d-f23626612fac.jpg)
+![output-defect-2638](https://user-images.githubusercontent.com/87117107/168736573-5005b233-67b0-4eca-9edf-bc08e2d55c52.jpg)
+![output-defect-2640](https://user-images.githubusercontent.com/87117107/168736577-4dd88f76-4df7-49e9-ace7-56dd8822b532.jpg)
+![output-defect-2697](https://user-images.githubusercontent.com/87117107/168736580-93871c22-f65f-4d09-96e1-beb899f50af4.jpg)
+![output-defect-2698](https://user-images.githubusercontent.com/87117107/168736582-c5928398-0b79-47ce-a56b-1962d821d550.jpg)
+![output-defect-2701](https://user-images.githubusercontent.com/87117107/168736584-95ddecdd-471d-41f6-a72f-23a54bbe71d9.jpg)
+![output-defect-2703](https://user-images.githubusercontent.com/87117107/168736587-efdbe4b8-1341-4d88-93b5-4061f944af30.jpg)
+![output-defect-2705](https://user-images.githubusercontent.com/87117107/168736589-bd26a0dc-37a9-49d6-8186-3993c22c9c8d.jpg)
+![output-defect-2627](https://user-images.githubusercontent.com/87117107/168736824-89b40c5d-9e03-4ec4-bfb4-87bd95bf0026.jpg)
+
+10. Since all images dataset provided have defects, image of a clean metal surface from the internet were used to evaluate the prediction. This is due to some of the images of aircraft parts seem to be of metal or steel surfaces. It could be seen the first output have no defect at all and the second output have detect scratches. 
+
+![output-defect-TestCleanSurface-2](https://user-images.githubusercontent.com/87117107/168737678-6884a614-0412-4f64-aa2f-b1b24a3458d1.jpg)
+
+![output-defect-TestCleanSurface](https://user-images.githubusercontent.com/87117107/168737718-c5a5810d-a085-45a8-bc32-e89e92fed30d.jpg)
+
+
 
 
 
