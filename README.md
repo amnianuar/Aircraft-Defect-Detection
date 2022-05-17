@@ -78,9 +78,25 @@ In the Custom Vision portal, training images is uploaded manually and automatic 
 
 ## Microsoft Power Apps 
 
-Since the client terminal app does not have frontend UI to navigate with, another way can be done to build apps by using Power Apps.
+Since the client terminal app does not have frontend UI to navigate with, another way can be done to build apps by using Power Apps. Power Apps will be connected to the API prediction resources from Custom Vision services and will be deployed to cloud. For this project, client mobile app is built by connecting to the API and deployed to cloud.
 
-1. It provide connection to the Custom Vision 
+1. Power Apps provide connection to the Custom Vision services by using data to add connectors and set the connection using the prediction key and URL which can be obtained from Custom Vision portal. 
+
+<img width="785" alt="Screenshot 2022-05-16 at 00 08 55" src="https://user-images.githubusercontent.com/87117107/168741407-3cf8a26b-fd95-4a93-a732-3964ae1689dc.png">
+<img width="338" alt="Screenshot 2022-05-16 at 00 10 38" src="https://user-images.githubusercontent.com/87117107/168741440-83e87639-9993-4c3e-8df0-6bf1187a4704.png">
+
+2. The design of the apps are as follow:
+<img width="495" alt="Screenshot 2022-05-17 at 14 18 49" src="https://user-images.githubusercontent.com/87117107/168742281-22a89b8d-a125-4abd-9100-678c49bd967b.png">
+
+<img width="497" alt="Screenshot 2022-05-17 at 14 19 00" src="https://user-images.githubusercontent.com/87117107/168742308-a20748c3-1cec-4bde-a599-730f62b27cb4.png">
+
+3. The **button Detect Defects** is the most important where it will connect to the prediction resources to detect whether there is defect when the image is uploaded. The following **code** should be specify in the button:
+
+```javascript  
+ClearCollect(gallerycol,CustomVision.DetectImageV2("Your Custom Vision AI project ID","Your Iteration",UploadedImage1).predictions)
+```
+<img width="1323" alt="Screenshot 2022-05-17 at 14 30 52" src="https://user-images.githubusercontent.com/87117107/168744109-75f57cfc-b3d7-488f-b327-350044b1b398.png">
+
 
 
 
