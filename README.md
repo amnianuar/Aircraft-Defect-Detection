@@ -1,7 +1,7 @@
 # Aircraft Defect Detection using Azure Custom Vision integrated with Microsoft Power Apps
 
 This project is for solving Problem Statement 1 given by Just Analytics for Code; Without Barriers Hackathon. 
-This project solution explains how to use Microsoft Custom Vision AI to detect defects in the images by object detection and will be integrated with Microsoft PowerApps.
+This project solution explains how to use Microsoft Custom Vision AI to detect defects in the aircraft parts images by object detection and will be integrated with Microsoft PowerApps.
 
 ## Azure Portal
 1. Create Cognitive Services and Custom Vision resources in Azure portal to be used. Custom Vision training and prediction resources created to train the images from dataset given and predict whether it has defects of scratch and dent. 
@@ -106,4 +106,4 @@ ClearCollect(gallerycol,CustomVision.DetectImageV2("Your Custom Vision AI projec
 **Note: The terminal client app and Power Apps built for this project can be both used for the manufacturing company to detect the defects in the images of aircraft parts.**
 
 ## Remarks
-The apps can be improved more by finding ways to provide bounding box for the exact location of the defects on the image of aircraft parts for a better evaulation. 
+The app can be improved more by finding ways to provide bounding box for the exact location of the defects on the image of aircraft parts for a better evaulation. 
