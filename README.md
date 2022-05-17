@@ -1,6 +1,7 @@
-# Aircraft Defect Detection using Azure Custom Vision
+# Aircraft Defect Detection using Azure Custom Vision integrated with Microsoft Power Apps
 
-This project explains how to use Microsoft Custom Vision AI to detect defects in the images by object detection and Microsoft PowerApps.
+This project is for solving Problem Statement 1 given by Just Analytics for Code; Without Barriers Hackathon. 
+This project solution explains how to use Microsoft Custom Vision AI to detect defects in the images by object detection and will be integrated with Microsoft PowerApps.
 
 ## Azure Portal
 1. Create Cognitive Services and Custom Vision resources in Azure portal to be used. Custom Vision training and prediction resources created to train the images from dataset given and predict whether it has defects of scratch and dent. 
@@ -36,7 +37,7 @@ In the Custom Vision portal, training images is uploaded manually and automatic 
 
 1. **Microsoft Visual Object Tagging Tool (VoTT)** is used to tag the dent and scratch on the images. It has the ability exporting to json file as this will be used to identify the bounding box of the coordinates of each tag. Since in the portal is done using the cursor and it has the capability of tagging the defect and trained from the labeled bounding box automatically but if done manually, annotation of the images must be done by ourselves to find the exact location of defect and scratch. 
 
-3. The data of the training images is saved in Azure Blob Storage to be tagged on VoTT. It's very secure and protect the data privacy as SAS token and enable CORS should be done before connecting to the blob storage. After finished tagging, export to json file was done named `aircraft-defects-export.json` to Azure Blob storage.
+2. The data of the training images is saved in Azure Blob Storage to be tagged on VoTT. It's very secure and protect the data privacy as SAS token and enable CORS should be done before connecting to the blob storage. After finished tagging, export to json file was done named `aircraft-defects-export.json` to Azure Blob storage.
 
 <img width="1271" alt="Screenshot 2022-05-16 at 15 03 20" src="https://user-images.githubusercontent.com/87117107/168729220-dda3a612-c506-489f-9555-b81e3d3ecf67.png">
 
